@@ -9,15 +9,15 @@ HTTPClient httpClient;
 //#include <Adafruit_SHT31.h>
 //#include <Adafruit_BMP085.h>
 
-const char* ssid = "MopLink";
-const char* password = "ThisIsLeosWLN";
-//const char* ssid = "ck";
-//const char* password = "chuangke";
+// const char* ssid = "MopLink";
+// const char* password = "ThisIsLeosWLN";
+const char* ssid = "ck";
+const char* password = "chuangke";
 const char* mqtt_server = "tx.3cat.top";
 
 char mqtt_topic[128];
 
-String SERVER_ADDR = "http://lora.3cat.top/action/postdata";          // http://lora.3cat.top/action/postdata
+String SERVER_ADDR = "http://10.132.40.15/action/postdata";          // http://lora.3cat.top/action/postdata
 u32 ChipID;
 
 #define WARNING_QUEUE_LEN 20
