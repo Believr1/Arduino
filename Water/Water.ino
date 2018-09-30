@@ -8,7 +8,8 @@
 const char *ssid = "ChinaNet-HHH";
 const char *password = "hzylsbhyrhch";
 const char *mqtt_server = "tx.3cat.top";
-const int sleepTime = 3000 //ms
+const int sleepTime = 3000; //ms
+const int waterPin = D3;
 
 // you are not expected to change anything in follow
 HTTPClient httpClient;
@@ -84,9 +85,8 @@ void setup()
   Serial.begin(9600);
   Serial.println("\n\nStart...");
 
-  pinMode(BUILTIN_LED, OUTPUT);
+  pinMode(waterPin, OUTPUT);
   pinMode(BUILTIN_LED, INPUT);
-
   digitalWrite(BUILTIN_LED, LOW);
   delay(100);
   digitalWrite(BUILTIN_LED, HIGH);
@@ -116,8 +116,7 @@ void loop()
     setup_wifi();
   }
 
-  g_bwaterd = digitalRead(BUILTIN_LED);
+  g_bwaterd = digitalRead(waterPin);
   mqttReport();
-  //httpReport();
   delay(sleepTime);
 }
